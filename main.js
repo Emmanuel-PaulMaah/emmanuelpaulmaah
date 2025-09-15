@@ -1,102 +1,63 @@
-// main.js — vanilla JS for small interactions
-document.addEventListener('DOMContentLoaded', function () {
-  // Populate year in footer
+document.addEventListener('DOMContentLoaded', () => {
+  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Mobile nav toggle
-  const navToggle = document.getElementById('navToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  navToggle && navToggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('hidden');
-  });
-
-  // Newsletter signup handling (stub — replace with real endpoint)
-  const form = document.getElementById('newsletterForm');
-  const emailInput = document.getElementById('emailInput');
-  const signupMsg = document.getElementById('signupMsg');
-
-  form && form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const email = emailInput.value.trim();
-    if (!email) return;
-    // Simple validation
-    if (!/^\S+@\S+\.\S+$/.test(email)) {
-      signupMsg.textContent = 'Please enter a valid email.';
-      signupMsg.classList.remove('hidden');
-      signupMsg.classList.remove('text-green-600');
-      signupMsg.classList.add('text-red-600');
-      return;
-    }
-
-    // Here: integrate with Substack, ConvertKit, or your backend.
-    // Example: call your API or show success message.
-    signupMsg.textContent = 'Thanks — check your inbox for a welcome note.';
-    signupMsg.classList.remove('hidden');
-    signupMsg.classList.remove('text-red-600');
-    signupMsg.classList.add('text-green-600');
-    emailInput.value = '';
-  });
-
-  // Contact form: stub to show success message (replace with backend)
-  const contactForm = document.getElementById('contactForm');
-  const contactMsg = document.getElementById('contactMsg');
-  contactForm && contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    // Collect form data
-    const data = new FormData(contactForm);
-    // In production: send to your email API or server endpoint.
-    contactForm.reset();
-    contactMsg.textContent = 'Message sent. I will reply within 48 hours.';
-    contactMsg.classList.remove('hidden');
-    setTimeout(() => contactMsg.classList.add('hidden'), 7000);
-  });
-
-  // Load featured posts (placeholder data that you can edit)
-  const samplePosts = [
+  // Hardcoded sample posts
+  const mediumPosts = [
     {
-      title: 'Why newsletters still matter',
-      excerpt: 'Short-form essays beat viral takes when they build context across weeks.',
-      url: 'https://emmanuelpaulmaah.substack.com/',
-      tag: 'Newsletter'
+      title: "The Age of AI and Attention",
+      url: "https://medium.com/@emmanuel.paulmaah/the-age-of-ai-and-attention-xxxx",
+      excerpt: "Exploring how artificial intelligence reshapes what we choose to pay attention to."
     },
     {
-      title: 'On attention & the new information economy',
-      excerpt: 'How platform design shapes what we care to think about.',
-      url: 'https://medium.com/@emmanuel.paulmaah',
-      tag: 'Culture'
+      title: "Building Bridges Between Code and Culture",
+      url: "https://medium.com/@emmanuel.paulmaah/building-bridges-xxxx",
+      excerpt: "On how technology isn’t just about systems, but about the humans it connects."
     },
     {
-      title: 'A practical checklist for onboarding newsletter readers',
-      excerpt: 'Steps to turn a signup into a returning reader — with examples.',
-      url: 'https://emmanuelpaulmaah.substack.com/',
-      tag: 'Product'
+      title: "A Quiet Future of Tech",
+      url: "https://medium.com/@emmanuel.paulmaah/a-quiet-future-xxxx",
+      excerpt: "Thoughts on subtle innovations that change our lives quietly."
     }
   ];
 
-  const postsContainer = document.getElementById('posts');
-  postsContainer.innerHTML = ''; // clear loading text
-  samplePosts.forEach(p => {
-    const article = document.createElement('article');
-    article.className = 'p-5 border rounded hover:shadow';
-    article.innerHTML = `
-      <div class="flex items-start justify-between">
-        <div>
-          <h3 class="text-lg font-medium"><a href="${p.url}" target="_blank" rel="noopener" class="hover:text-accent">${escapeHtml(p.title)}</a></h3>
-          <p class="text-sm text-gray-600 mt-2">${escapeHtml(p.excerpt)}</p>
-        </div>
-        <div class="text-xs text-gray-500 ml-4">${escapeHtml(p.tag)}</div>
-      </div>
-    `;
-    postsContainer.appendChild(article);
-  });
+  const substackPosts = [
+    {
+      title: "On finding my voice again",
+      url: "https://emmanuelpaulmaah.substack.com/p/on-finding-my-voice-again",
+      excerpt: "A personal reflection on rediscovering the joy of writing."
+    },
+    {
+      title: "Letters from the in-between",
+      url: "https://emmanuelpaulmaah.substack.com/p/letters-from-the-in-between",
+      excerpt: "Notes on the messy middle of projects and life."
+    },
+    {
+      title: "Morning thoughts",
+      url: "https://emmanuelpaulmaah.substack.com/p/morning-thoughts",
+      excerpt: "A short entry about slowing down before the day begins."
+    }
+  ];
 
-  // Small helper to avoid injection when injecting strings
-  function escapeHtml(str) {
-    return String(str)
-      .replaceAll('&', '&amp;')
-      .replaceAll('<', '&lt;')
-      .replaceAll('>', '&gt;')
-      .replaceAll('"', '&quot;')
-      .replaceAll("'", '&#39;');
+  // Pick random
+  function randomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
   }
+
+  const mediumChoice = randomItem(mediumPosts);
+  const substackChoice = randomItem(substackPosts);
+
+  // Render Medium post
+  const mediumDiv = document.getElementById('mediumPost');
+  mediumDiv.innerHTML = `
+    <a href="${mediumChoice.url}" target="_blank" class="text-lg font-medium hover:text-accent">${mediumChoice.title}</a>
+    <p class="mt-2 text-sm text-gray-600">${mediumChoice.excerpt}</p>
+  `;
+
+  // Render Substack post
+  const substackDiv = document.getElementById('substackPost');
+  substackDiv.innerHTML = `
+    <a href="${substackChoice.url}" target="_blank" class="text-lg font-medium hover:text-accent">${substackChoice.title}</a>
+    <p class="mt-2 text-sm text-gray-600">${substackChoice.excerpt}</p>
+  `;
 });
