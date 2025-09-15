@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emmanuel PaulMaah — Writer & Copy Strategist</title>
+  <meta name="description" content="Emmanuel PaulMaah — essays and newsletter on AI, culture & ideas. Ghostwriting, email marketing, and copywriting services." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Emmanuel PaulMaah — Writer & Copy Strategist" />
+  <meta property="og:description" content="Essays and newsletter on AI, culture & ideas. Ghostwriting, email marketing, and copywriting services." />
+  <meta property="og:image" content="assets/profile-og.jpg" />
+  <meta property="og:type" content="website" />
+  <!-- Tailwind CDN (JIT styles included) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Optional: small tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#1f7a8c' /* pick an accent; change to taste */
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+<body class="antialiased text-gray-900 bg-white">
+  <!-- Sticky header -->
+  <header class="sticky top-0 bg-white/80 backdrop-blur z-40 border-b">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="assets/profile-circle.jpg" alt="Emmanuel PaulMaah" class="w-10 h-10 rounded-full object-cover" />
+        <div>
+          <div class="text-sm font-semibold">Emmanuel PaulMaah</div>
+          <div class="text-xs text-gray-500">Writer · Ghostwriter · Email Marketer</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#writing" class="hover:text-accent">Writing</a>
+        <a href="#services" class="hover:text-accent">Services</a>
+        <a href="#newsletter" class="hover:text-accent">Newsletter</a>
+        <a href="#contact" class="hover:text-accent">Contact</a>
+      </nav>
+
+      <div class="md:hidden">
+        <button id="navToggle" aria-label="Open menu" class="p-2">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="md:hidden hidden border-t">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#writing" class="block">Writing</a>
+        <a href="#services" class="block">Services</a>
+        <a href="#newsletter" class="block">Newsletter</a>
+        <a href="#contact" class="block">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <!-- Hero -->
+    <section class="grid md:grid-cols-3 gap-8 items-center">
+      <div class="md:col-span-2">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">Emmanuel PaulMaah</h1>
+        <p class="mt-4 text-lg text-gray-700 max-w-2xl">
+          I write clear, bold essays at the intersection of technology, culture and ideas.
+          I help founders and leaders tell stories that convert — through ghostwriting, email marketing and strategic copy.
+        </p>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#writing" class="inline-flex items-center px-4 py-2 rounded-md bg-accent text-white text-sm font-medium shadow-sm hover:opacity-95">Read latest</a>
+          <a href="#newsletter" class="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium">Subscribe</a>
+          <a href="#contact" class="inline-flex items-center px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-accent">Hire me</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-2 gap-3">
+          <div class="bg-gray-50 p-4 rounded">
+            <div class="text-xs text-gray-500">Featured</div>
+            <a href="https://emmanuelpaulmaah.substack.com/" target="_blank" rel="noopener" class="block mt-1 text-sm font-medium hover:text-accent">Emmanuel’s Letters — Substack</a>
+            <div class="text-xs text-gray-500 mt-2">Short weekly notes & essays</div>
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded">
+            <div class="text-xs text-gray-500">On Medium</div>
+            <a href="https://medium.com/@emmanuel.paulmaah" target="_blank" rel="noopener" class="block mt-1 text-sm font-medium hover:text-accent">Essays and longreads</a>
+            <div class="text-xs text-gray-500 mt-2">Selected essays & reflections</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-first md:order-last flex justify-center md:justify-end">
+        <img src="assets/profile-hero.jpg" alt="Emmanuel portrait" class="w-48 h-48 rounded-lg object-cover shadow" />
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="mt-16">
+      <h2 class="text-2xl font-semibold">About</h2>
+      <p class="mt-4 text-gray-700">
+        I write about the social side of technology — why tools change minds, institutions and culture.
+        I also help people and teams craft narrative-driven content: newsletters, longform essays, and conversion-focused email sequences.
+      </p>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="p-4 bg-gray-50 rounded">
+          <div class="text-xs text-gray-500">Origins</div>
+          <div class="font-medium mt-1">Port Harcourt • Nigeria</div>
+        </div>
+
+        <div class="p-4 bg-gray-50 rounded">
+          <div class="text-xs text-gray-500">Current Focus</div>
+          <div class="font-medium mt-1">Newsletter, Ghostwriting, Email Campaigns</div>
+        </div>
+
+        <div class="p-4 bg-gray-50 rounded">
+          <div class="text-xs text-gray-500">Platform</div>
+          <div class="font-medium mt-1">Substack • Medium • LinkedIn</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Writing / Thoughts -->
+    <section id="writing" class="mt-16">
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-2xl font-semibold">Writing</h2>
+        <a href="https://emmanuelpaulmaah.substack.com" target="_blank" rel="noopener" class="text-sm text-accent">See newsletter archive →</a>
+      </div>
+
+      <div id="posts" class="mt-6 grid gap-6">
+        <!-- JS will populate this with featured posts -->
+        <article class="p-5 border rounded">
+          <h3 class="text-lg font-medium">Loading featured pieces…</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="mt-16">
+      <h2 class="text-2xl font-semibold">Services</h2>
+      <p class="mt-3 text-gray-700">Practical, results-oriented writing services for founders, creators and leaders.</p>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="p-4 border rounded">
+          <div class="font-semibold">Ghostwriting</div>
+          <div class="text-sm text-gray-600 mt-2">Op-eds, longform essays, thought leadership that sounds like you.</div>
+        </div>
+
+        <div class="p-4 border rounded">
+          <div class="font-semibold">Email & Newsletters</div>
+          <div class="text-sm text-gray-600 mt-2">Campaign sequences, onboarding flows, daily/weekly newsletters that keep readers coming back.</div>
+        </div>
+
+        <div class="p-4 border rounded">
+          <div class="font-semibold">Copywriting</div>
+          <div class="text-sm text-gray-600 mt-2">Landing pages, sales pages and short-form copy tuned for conversions.</div>
+        </div>
+      </div>
+
+      <div class="mt-6 text-sm text-gray-600">
+        <strong>Process:</strong> kickoff call → brief → draft → 2 revisions. <span class="ml-2">Pricing starts at <strong>$750</strong> for short projects (adjust as needed).</span>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" class="mt-16">
+      <div class="bg-gradient-to-r from-white to-gray-50 border p-6 rounded">
+        <div class="md:flex md:items-center md:justify-between">
+          <div>
+            <h2 class="text-2xl font-semibold">Emmanuel’s Letters</h2>
+            <p class="mt-2 text-gray-700">Short essays and practical ideas about tech, culture and communication — delivered to your inbox.</p>
+          </div>
+
+          <form id="newsletterForm" class="mt-4 md:mt-0 flex gap-2 max-w-md">
+            <input id="emailInput" name="email" type="email" required placeholder="your@email.com"
+                   class="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-accent" />
+            <button type="submit" class="px-4 py-2 rounded-md bg-accent text-white">Subscribe</button>
+          </form>
+        </div>
+        <p id="signupMsg" class="mt-3 text-sm text-green-600 hidden"></p>
+      </div>
+    </section>
+
+    <!-- Affiliations -->
+    <section id="affiliations" class="mt-16">
+      <h3 class="text-lg font-semibold">Featured / Seen in</h3>
+      <div class="mt-4 flex flex-wrap gap-4 items-center">
+        <!-- Placeholder logos: add images to assets -->
+        <img src="assets/logo-1.png" alt="logo" class="h-8 object-contain" />
+        <img src="assets/logo-2.png" alt="logo" class="h-8 object-contain" />
+        <img src="assets/logo-3.png" alt="logo" class="h-8 object-contain" />
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mt-16 pb-20">
+      <h2 class="text-2xl font-semibold">Contact</h2>
+      <p class="mt-3 text-gray-700">For commissions, consulting or a friendly chat — reach out.</p>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <form id="contactForm" class="p-6 border rounded space-y-3">
+          <div>
+            <label class="text-sm block">Name</label>
+            <input name="name" required class="w-full px-3 py-2 border rounded" />
+          </div>
+          <div>
+            <label class="text-sm block">Email</label>
+            <input name="email" type="email" required class="w-full px-3 py-2 border rounded" />
+          </div>
+          <div>
+            <label class="text-sm block">Message</label>
+            <textarea name="message" rows="5" required class="w-full px-3 py-2 border rounded"></textarea>
+          </div>
+
+          <div>
+            <button type="submit" class="px-4 py-2 bg-accent text-white rounded">Send message</button>
+            <span id="contactMsg" class="ml-3 text-sm text-green-600 hidden"></span>
+          </div>
+        </form>
+
+        <div class="p-6">
+          <h4 class="font-semibold">Other ways to reach me</h4>
+          <ul class="mt-3 space-y-2 text-sm text-gray-700">
+            <li>Email: <a href="mailto:hello@emmanuelpaulmaah.com" class="text-accent">hello@emmanuelpaulmaah.com</a></li>
+            <li>Substack: <a href="https://emmanuelpaulmaah.substack.com" target="_blank" class="text-accent">emmanuelpaulmaah.substack.com</a></li>
+            <li>LinkedIn: <a href="https://ng.linkedin.com/in/emmanuel-paulmaah-a2b8aa222" target="_blank" class="text-accent">linkedin.com/in/emmanuel-paulmaah</a></li>
+          </ul>
+
+          <div class="mt-6 text-sm text-gray-500">
+            <strong>Availability:</strong> Open to ghostwriting and newsletter strategy projects. <br/>
+            Typical turnaround: 1–4 weeks depending on scope.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t py-6 mt-8">
+    <div class="max-w-4xl mx-auto px-6 text-sm text-gray-600">
+      © <span id="year"></span> Emmanuel PaulMaah · Built with care · <a href="#contact" class="text-accent">Hire me</a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="main.js"></script>
+</body>
+</html>
